@@ -11,6 +11,8 @@ angular-skeleton
 
 4. Собрать проект с минимизированной версией $ grunt app , cобрать проект с полной версией для дебага $ grunt app-debug
 
+5. В папке build открыть index.html в браузере
+
 Что бы обновить версии библиотек:
 
 1. Установить Bower $ npm install -g bower
