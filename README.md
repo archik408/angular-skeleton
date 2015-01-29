@@ -16,3 +16,6 @@ angular-skeleton
 1. Установить Bower $ npm install -g bower
 
 2. В корне проекта вызвать в консоле $ bower i (все зависимости указаны в bower.json)
+
+Новые библиотеки добавляются в bower.json и в build.config.js (libs полные и min_libs минимизированные соответственно).
+После добавления вызвать опять $ bower i и $ grunt app
