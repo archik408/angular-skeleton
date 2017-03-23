@@ -1,14 +1,13 @@
 module.exports = function (grunt) {
-
     function filterForJS(files) {
         return files.filter(function (file) {
             return file.match(/\.js$/);
         });
     }
 
-    function filterForCSS ( files ) {
-        return files.filter( function ( file ) {
-            return file.match( /\.css$/ );
+    function filterForCSS(files) {
+        return files.filter(function (file) {
+            return file.match(/\.css$/);
         });
     }
 
@@ -32,14 +31,12 @@ module.exports = function (grunt) {
         });
     }
 
-
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-html2js');
-
 
     grunt.registerMultiTask('indexDebug', 'Process index.html template', function () {
         var jsFiles = returnFiles(this, filterForJS),
@@ -48,7 +45,6 @@ module.exports = function (grunt) {
         buildIndex(this, jsFiles, cssFiles);
 
     });
-
     grunt.registerMultiTask('index', 'Process index.html template', function () {
         var jsFiles = returnFiles(this, filterForJS),
             cssFiles = returnFiles(this, filterForCSS);
@@ -56,25 +52,20 @@ module.exports = function (grunt) {
         jsFiles.push('templates-app.js');
         buildIndex(this, jsFiles, cssFiles);
     });
-
     grunt.initConfig(grunt.util._.extend({
-
         pkg: grunt.file.readJSON("package.json"),
-
         indexDebug: {
             build: {
                 dir: '<%= build_dir %>',
                 src: ['<%= libs %>', '<%= libs_css %>', '<%= build_dir %>/src/**/*.js']
             }
         },
-
         index: {
             build: {
                 dir: '<%= build_dir %>',
                 src: ['<%= min_libs %>', '<%= libs_css %>']
             }
         },
-
         html2js: {
             app: {
                 options: {
@@ -84,7 +75,6 @@ module.exports = function (grunt) {
                 dest: '<%= build_dir %>/templates-app.js'
             }
         },
-
         copy: {
             build_js: {
                 files: [
@@ -117,11 +107,9 @@ module.exports = function (grunt) {
                 ]
             }
         },
-
         clean: [
             '<%= build_dir %>'
         ],
-
         jshint: {
             src: ['src/**/*.js'],
 
@@ -139,15 +127,12 @@ module.exports = function (grunt) {
             },
             globals: {}
         },
-
         uglify: {
             build: {
                 src: '<%= build_dir %>/js/built.js',
                 dest: '<%= build_dir %>/js/built.min.js'
             }
         },
-
-
         concat: {
             options: {
                 separator: ';'
@@ -157,10 +142,7 @@ module.exports = function (grunt) {
                 dest: '<%= build_dir %>/js/built.js'
             }
         }
-
     }, require('./build.config.js')));
-
     grunt.registerTask('app', ['clean', 'html2js', 'jshint', 'concat', 'uglify', 'copy:build_minlibs', 'index']);
     grunt.registerTask('app-debug', ['clean', 'html2js', 'jshint', 'copy:build_libs', 'copy:build_js', 'indexDebug']);
-
 };

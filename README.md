@@ -1,23 +1,28 @@
-# angular-skeleton
-angular-skeleton
+# Angular 1.0 Skeleton
+>angular-skeleton
 
 
-# Краткое руководство
-1. Клонируйте проект себе локально
+## Start
 
-2. Необходимо установить npm
++ clone repo
 
-3. В корневой папке проекта в консоле вызвать $ npm install (все зависимости grunt указаны в package.json)
++ install tool `npm`
 
-4. Собрать проект с минимизированной версией $ grunt app , cобрать проект с полной версией для дебага $ grunt app-debug
++ `$ npm install` (for grunt dependencies in package.json)
 
-5. В папке build открыть index.html в браузере
++ install bower `$ npm install -g bower`
 
-Что бы обновить версии библиотек:
++ install all app dependencies `$ bower i` (bower.json))
 
-1. Установить Bower $ npm install -g bower
++ build project `$ grunt app` , build project for debugging $ grunt app-debug`
 
-2. В корне проекта вызвать в консоле $ bower i (все зависимости указаны в bower.json)
++ find and open `index.html` in `build` folder
 
-Новые библиотеки добавляются в bower.json и в build.config.js (libs полные и min_libs минимизированные соответственно).
-После добавления вызвать опять $ bower i и $ grunt app
+
+## Tools
+
++ npm
++ grunt
++ bower
++ angular 1
++ angular-bootstrap

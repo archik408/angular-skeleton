@@ -1,8 +1,6 @@
 module.exports = {
-
-    'build_dir': 'build',
-
-    'libs': [
+    build_dir: 'build',
+    libs: [
         'libs/jquery/dist/jquery.js',
         'libs/angular/angular.js',
         'libs/angular-bootstrap/ui-bootstrap.js',
@@ -12,7 +10,7 @@ module.exports = {
         'libs/ui-router-extras/release/ct-ui-router-extras.js',
         'libs/bootstrap/dist/js/bootstrap.js'
     ],
-    'min_libs': [
+    min_libs: [
         'libs/jquery/dist/jquery.min.js',
         'libs/angular/angular.min.js',
         'libs/angular-bootstrap/ui-bootstrap.min.js',
@@ -22,10 +20,8 @@ module.exports = {
         'libs/ui-router-extras/release/ct-ui-router-extras.min.js',
         'libs/bootstrap/dist/js/bootstrap.min.js'
     ],
-
     libs_css: [
         'libs/bootstrap/dist/css/bootstrap.min.css',
         'libs/bootstrap/dist/css/bootstrap-theme.min.css'
     ]
-    
 };

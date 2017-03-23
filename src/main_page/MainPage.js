@@ -8,5 +8,4 @@ angular.module('trueimpact.main_page', ['trueimpact', 'ui.router'])
     }])
     .controller('MainPageController', ['$scope', function ($scope) {
         $scope.hello = "Hello";
-
     }]);

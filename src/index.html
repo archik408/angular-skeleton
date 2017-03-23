@@ -2,31 +2,23 @@
 <html ng-app="trueimpact" ng-controller="AppController">
 <head>
     <title ng-bind="pageTitle"></title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>"/>
     <% }); %>
-
     <% scripts.forEach( function ( file ) { %>
     <script type="text/javascript" src="<%= file %>"></script>
     <% }); %>
-
 </head>
 <body>
-
 <div class="container">
     <div class="row row-header">
         <div class="col-md-12">
             <header>
                 <div class="row">
                     <div class="col-md-12">
-
-
                     </div>
                 </div>
-
             </header>
         </div>
     </div>
@@ -34,6 +26,5 @@
         <div class="col-md-12" ui-view></div>
     </div>
 </div>
-
 </body>
 </html>
